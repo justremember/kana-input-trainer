@@ -3,7 +3,7 @@ import { useReducer } from 'react';
 
 export const LOOKAHEAD = 1;
 
-const allKanasInOrder = 'ろぬふあうえおやゆよわほへたていすかんなににらせむちとしはきくまのりれけつさそひこみもねるめ';
+const allKanasInOrder = 'ろぬふあうえおやゆよわほへたていすかんなにらせむちとしはきくまのりれけつさそひこみもねるめ';
 const kanasArray = allKanasInOrder.split('');
 
 const initialState = {
