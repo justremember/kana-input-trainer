@@ -15,6 +15,7 @@ export default function Home() {
       </Head>
       <main className='container-sm'>
         <h1>Kana Input Trainer</h1>
+        <p>Uses a simple SRS algorithm. Keyboard reference image below.</p>
         <KanaInputTrainer />
         <Image
           src={kanaInputLayout}
