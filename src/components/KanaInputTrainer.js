@@ -1,16 +1,20 @@
+import { useState } from 'react';
 import useKanaState from '@/hooks/useKanaState';
 
 export default function KanaInputTrainer() {
   const [state, dispatch, lookahead] = useKanaState();
+  const [wasCorrect, setWasCorrect] = useState(true);
 
   function handleInputChange(e) {
     const ans = e.target.value[e.target.value.length - 1];
     if (ans === state.queue[0]) {
       console.log('dispatch correct');
       dispatch({ type: 'correct' });
+      setWasCorrect(true);
     } else {
       console.log('dispatch wrong');
       dispatch({ type: 'wrong', ans });
+      setWasCorrect(false);
     }
   }
   return (
@@ -26,7 +30,7 @@ export default function KanaInputTrainer() {
           { state.queue.slice(1, 1 + lookahead).join('') }
         </div>
       </div>
-      <input type='text' className='form-control' placeholder='Type kana here' onChange={handleInputChange} />
+      <input type='text' className={`kana-input-box form-control ${wasCorrect ? 'was-correct' : 'was-wrong'}`} placeholder='Type kana here' onChange={handleInputChange} />
     </div>
   );
 }

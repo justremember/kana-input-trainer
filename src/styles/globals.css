@@ -1,5 +1,5 @@
 main {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .kana-input-trainer {
@@ -22,4 +22,12 @@ main {
 
 .kana-questions-after {
   color: gray;
+}
+
+.kana-input-box.was-correct {
+  background-color: #cfc;
+}
+
+.kana-input-box.was-wrong {
+  background-color: #fcc;
 }
