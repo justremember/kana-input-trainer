@@ -20,7 +20,7 @@ export default function Home() {
         <p>Click on the text box. Type the kana as shown on the center of the screen.
         </p>
         <p>
-          Ignore the textbox. Ignore the IME. No need to press backspace, tab, or space. Just focus on pressing the correct key.
+          Ignore the textbox. Ignore the IME. No need to press backspace, enter, tab, or space. Just focus on pressing the correct key. If experiencing issues try pressing enter to &quot;reset&quot; the IME.
         </p>
         <KanaInputTrainer />
         <Image
