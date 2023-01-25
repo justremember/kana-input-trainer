@@ -45,6 +45,9 @@ export default function useKanaState() {
         console.log({ newState });
         return newState;
       }
+      case 'loadState': {
+        return action.state;
+      }
       default:
         console.log('unrecognized action type:', action.type);
         return state;

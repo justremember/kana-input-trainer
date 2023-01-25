@@ -28,6 +28,12 @@ export default function Home() {
           alt='Kana Input Layout'
           style={{margin: '50px auto 0 auto', display: 'block'}}
         />
+        <div className='mt-5'>
+          <h5>Known Issues</h5>
+          <ul>
+            <li>Sadly I could not get the autosave feature to work, so here are &quot;Save State&quot; & &quot;Load State&quot; buttons instead.</li>
+          </ul>
+        </div>
       </main>
     </>
   )
