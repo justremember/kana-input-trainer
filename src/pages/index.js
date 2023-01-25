@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
-import KanaInputTrainer from '@/components/KanaInputTrainer'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.css';
+import KanaInputTrainer from '@/components/KanaInputTrainer';
+import kanaInputLayout from '@/images/kana-input-layout.png';
 
 export default function Home() {
   return (
@@ -15,6 +16,11 @@ export default function Home() {
       <main className='container-sm'>
         <h1>Kana Input Trainer</h1>
         <KanaInputTrainer />
+        <Image
+          src={kanaInputLayout}
+          alt='Kana Input Layout'
+          style={{margin: '50px auto 0 auto', display: 'block'}}
+        />
       </main>
     </>
   )
