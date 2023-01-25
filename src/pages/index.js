@@ -17,7 +17,9 @@ export default function Home() {
         <h1>Kana Input Trainer with SRS</h1>
         <p>Uses a simple SRS algorithm. Keyboard reference image below. <a href='https://github.com/justremember/kana-input-trainer'>Source code here.</a></p>
         <h5>How to use</h5>
-        <p>Type the kana as shown on the center of the screen.
+        <p>Click on the text box. Type the kana as shown on the center of the screen.
+        </p>
+        <p>
           Ignore the textbox. Ignore the IME. No need to press backspace, tab, or space. Just focus on pressing the correct key.
         </p>
         <KanaInputTrainer />
