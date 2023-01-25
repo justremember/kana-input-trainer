@@ -7,7 +7,19 @@ main {
   margin: auto;
 }
 
-.kana-question {
-  font-size: 5em;
+.kana-prompt {
+  font-size: 3rem;
   text-align: center;
+}
+
+.kana-ghost {
+  visibility: hidden;
+}
+
+.kana-next-question {
+  font-size: 5rem;
+}
+
+.kana-questions-after {
+  color: gray;
 }
