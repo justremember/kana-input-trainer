@@ -38,6 +38,7 @@ export default function KanaInputTrainer() {
 
   useEffect(() => {
     if (fileDownloadUrl) {
+      fileDownloadRef.current.setAttribute('download', `kanaState_${new Date(Date.now()).toISOString()}.txt`);
       fileDownloadRef.current.click();
       URL.revokeObjectURL(fileDownloadUrl);
       setFileDownloadUrl(null);
@@ -76,7 +77,7 @@ export default function KanaInputTrainer() {
         className={`kana-input-box form-control ${wasCorrect ? 'was-correct' : 'was-wrong'}`}
         placeholder='Type kana here'
         onChange={handleInputChange}
-        maxlength='100000'
+        maxLength='100000'
       />
       <button className='btn btn-secondary mt-2 me-2' onClick={saveState}>Save State</button>
       <button className='btn btn-secondary mt-2 me-2' onClick={loadState}>Load State</button>
@@ -85,7 +86,6 @@ export default function KanaInputTrainer() {
         style={{display: 'none'}}
         href={fileDownloadUrl}
         ref={fileDownloadRef}
-        download='kanaInputTrainerState.txt'
       >download it</a>
 
       <input
