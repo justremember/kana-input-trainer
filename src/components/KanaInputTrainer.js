@@ -81,6 +81,9 @@ export default function KanaInputTrainer() {
       />
       <button className='btn btn-secondary mt-2 me-2' onClick={saveState}>Save State</button>
       <button className='btn btn-secondary mt-2 me-2' onClick={loadState}>Load State</button>
+      <span>
+        Prompts answered correctly: <span>{ state.charsAnswered }</span>
+      </span>
 
       <a
         style={{display: 'none'}}

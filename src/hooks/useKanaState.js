@@ -10,7 +10,8 @@ const initialPriority = kanasArray.reduce((o, key, i) => ({ ...o, [key]: i * 5})
 const initialState = {
   ease: kanasArray.reduce((o, key) => ({ ...o, [key]: 1}), {}),
   queue: kanasArray,
-  priority: initialPriority
+  priority: initialPriority,
+  charsAnswered: 0
 }
 
 // reposition the first kana in the queue depending on its ease
@@ -33,7 +34,8 @@ export default function useKanaState() {
         const newState = {
           ...state,
           ease: newEase,
-          queue: newQueue
+          queue: newQueue,
+          charsAnswered: state.charsAnswered + 1
         };
         console.log({ newState });
         return newState;
@@ -41,8 +43,8 @@ export default function useKanaState() {
       case 'wrong': {
         const newEase = {
           ...state.ease,
-          [prompt]: Math.max(1, Math.floor(state.ease[prompt] / 8)),
-          [action.ans]: Math.max(1, Math.floor(state.ease[action.ans] / 1))
+          [prompt]: Math.max(1, Math.floor(state.ease[prompt] / 8)) //,
+          //[action.ans]: Math.max(1, Math.floor(state.ease[action.ans] / 1))
         };
         const newState = {
           ...state,
