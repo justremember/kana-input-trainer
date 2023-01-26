@@ -13,7 +13,14 @@ const initialState = {
 
 // reposition the first kana in the queue depending on its ease
 function repositionKana(queue, ease) {
-  const newPos = LOOKAHEAD + ease;
+  let newPos;
+  if (ease < queue.length * 3/4) {
+	newPos = LOOKAHEAD + ease + Math.floor(Math.random() * 2);
+  } else {
+	// place kana in a random position in the 2nd half of the queue
+	newPos = LOOKAHEAD + Math.ceil(queue.length/2) + Math.floor(Math.random() * (queue.length/2 - LOOKAHEAD));
+  }
+  console.log(newPos);
   const firstHalf = queue.slice(1, newPos);
   const secondHalf = queue.slice(newPos);
   return firstHalf.concat([queue[0]], secondHalf);
@@ -24,19 +31,20 @@ export default function useKanaState() {
     const prompt = state.queue[0];
     switch (action.type) {
       case 'correct': {
+        const newQueue = repositionKana(state.queue, state.ease[prompt]);
         const newEaseVal = state.ease[prompt] * 2;
         const newEase = { ...state.ease, [prompt]: newEaseVal };
         const newState = {
           ...state,
           ease: newEase,
-          queue: repositionKana(state.queue, newEase[prompt])
+          queue: newQueue
         };
         console.log({ newState });
         return newState;
       }
       case 'wrong': {
-        const newPromptEaseVal = Math.max(1, Math.floor(state.ease[prompt] / 2));
-        const newWrongAnsEaseVal = Math.max(1, Math.floor(state.ease[action.ans] / 2));
+        const newPromptEaseVal = Math.max(1, Math.floor(state.ease[prompt] / 4));
+        const newWrongAnsEaseVal = Math.max(1, Math.floor(state.ease[action.ans] / 4));
         const newEase = { ...state.ease, [prompt]: newPromptEaseVal, [action.ans]: newWrongAnsEaseVal };
         const newState = {
           ...state,
