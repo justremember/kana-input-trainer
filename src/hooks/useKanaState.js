@@ -8,7 +8,7 @@ const kanasArray = allKanasInOrder.split('');
 const initialPriority = kanasArray.reduce((o, key, i) => ({ ...o, [key]: i * 5}), {});
 
 const initialState = {
-  ease: kanasArray.reduce((o, key) => ({ ...o, [key]: 1}), {}),
+  ease: kanasArray.reduce((o, key) => ({ ...o, [key]: 2}), {}),
   queue: kanasArray,
   priority: initialPriority,
   charsAnswered: 0

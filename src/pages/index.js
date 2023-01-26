@@ -16,19 +16,19 @@ export default function Home() {
       <main className='container-sm'>
         <h1>Kana Input Trainer with SRS</h1>
         <p>Uses a simple SRS algorithm. Keyboard reference image below. <a href='https://github.com/justremember/kana-input-trainer'>Source code here.</a></p>
-        <h5>How to use</h5>
-        <p>Click on the text box. Type the kana as shown on the center of the screen.
-        </p>
-        <p>
-          Ignore the textbox. Ignore the IME. No need to press backspace, enter, tab, or space. Just focus on pressing the correct key. If experiencing issues try pressing enter to &quot;reset&quot; the IME.
-        </p>
         <KanaInputTrainer />
         <Image
           src={kanaInputLayout}
           alt='Kana Input Layout'
           style={{margin: '50px auto 0 auto', display: 'block'}}
         />
-        <div className='mt-5'>
+        <div className='mt-1'>
+          <h5>How to use</h5>
+          <p>Click on the text box. Type the kana as shown on the center of the screen.
+          </p>
+          <p>
+            Ignore the textbox. Ignore the IME. No need to press backspace, enter, tab, or space. Just focus on pressing the correct key. If experiencing issues try pressing enter to &quot;reset&quot; the IME.
+          </p>
           <h5>Known Issues</h5>
           <ul>
             <li>Sadly I could not get the autosave feature to work, so here are &quot;Save State&quot; & &quot;Load State&quot; buttons instead.</li>

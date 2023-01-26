@@ -72,18 +72,22 @@ export default function KanaInputTrainer() {
           { state.queue.slice(1, 1 + lookahead).join('') }
         </div>
       </div>
-      <input
-        type='text'
-        className={`kana-input-box form-control ${wasCorrect ? 'was-correct' : 'was-wrong'}`}
-        placeholder='Type kana here'
-        onChange={handleInputChange}
-        maxLength='100000'
-      />
-      <button className='btn btn-secondary mt-2 me-2' onClick={saveState}>Save State</button>
-      <button className='btn btn-secondary mt-2 me-2' onClick={loadState}>Load State</button>
-      <span>
-        Prompts answered correctly: <span>{ state.charsAnswered }</span>
-      </span>
+      <div>
+        <button className='btn btn-secondary me-2' onClick={saveState}>Save State</button>
+        <button className='btn btn-secondary me-2' onClick={loadState}>Load State</button>
+        <span>
+          Prompts answered correctly: <span>{ state.charsAnswered }</span>
+        </span>
+      </div>
+      <div className='mt-2'>
+        <input
+          type='text'
+          className={`kana-input-box form-control ${wasCorrect ? 'was-correct' : 'was-wrong'}`}
+          placeholder='Type kana here'
+          onChange={handleInputChange}
+          maxLength='100000'
+        />
+      </div>
 
       <a
         style={{display: 'none'}}
